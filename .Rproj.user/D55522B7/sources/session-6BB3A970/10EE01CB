@@ -3,7 +3,7 @@
     "path": "D:/RSTUDIO/vzgweb/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "2256390342",
+    "hash": "1375731486",
     "contents": "",
     "dirty": false,
     "created": 1667761606455.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "2,18",
-        "scrollLine": "0"
+        "cursorPosition": "11,23",
+        "scrollLine": "2"
     },
     "folds": "",
-    "lastKnownWriteTime": 1667761658,
+    "lastKnownWriteTime": 1667773214,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1667761658666,
+    "last_content_update": 1667773214517,
     "read_only": false,
     "read_only_alternatives": []
 }
