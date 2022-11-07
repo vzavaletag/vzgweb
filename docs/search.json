@@ -9,8 +9,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "vzweb",
+    "title": "Apuntes de Salud Pública",
     "section": "",
     "text": "Para la siguiente semana\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Blogs.html",
+    "href": "Blogs.html",
+    "title": "Ejercicios con R",
+    "section": "",
+    "text": "Procesando la imagen\n\nur <- read_excel(\"D:/RSTUDIO/vzgweb/urban_rural.xlsx\")\n\nView(ur)\n\nprovincia <- ur$Provincia\n\nurbana <- ur$Urbana\n\nrural <- ur$Rural\n\nppur <- data.frame(urbana,rural,provincia)\n\npyramid(ppur,Llab=\"URBANA\",Rlab=\"RURAL\",Clab=\"\",\n        \n        Laxis=seq(0,220000,len=5), AxisFM=\"d\", AxisBM=\",\", Csize=1,\n        \n        Cstep=1, Cadj=-0.01,\n        \n        main=\"PIRAMIDE POBLACIONAL URBANA Y RURAL DE LA REGION CAJAMARCA 2017 \n\n        \\n (Fuente: INEI, Censo 2017)\")"
   }
 ]

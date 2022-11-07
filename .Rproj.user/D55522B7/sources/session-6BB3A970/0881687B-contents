@@ -1,0 +1,322 @@
+###########################
+library("apyramid")
+library("ggplot2")
+library(pyramid)
+library(readxl)
+
+rm(list = ls())
+
+setwd("D:/2022/PLAN PROVINCIAL")
+
+# piramid <- read_excel("./piram22.xlsx")
+piramid <- read.csv("./piram22.csv", sep=";")
+View(piramid)
+
+
+gedad <- piramid$GEDAD
+hombres <- piramid$HOMBRES
+mujeres <- piramid$MUJERES
+
+data <- data.frame(hombres,mujeres,gedad)
+
+pyramid(data,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,25000,len=5), AxisFM="d", AxisBM=",", Csize=1.2,
+        Cstep=1, main="PIRAMIDE POBLACIONAL DE LA PROVINCIA DE CAJAMARCA 2022 
+        \n (Fuente: INEI, MINSA)")
+class(piramid)
+
+
+py.Males <- c(80,40,30,20,10)
+names(py.Males) <- c('0-9','10-19','20-29','30-39','40-')
+py.Females <- c(60,50,40,30,5)
+names(py.Females) <- names(py.Males)
+py.df <- data.frame(py.Females,py.Males)
+pyramid(py.df,Llab="Females",Rlab="Males",Lcol="Cyan", Ldens=-1, Rcol="Pink", 
+        Rdens=-1, GL=FALSE,main="An example of population pyramid\n with auto-axis")
+########################################################################################
+#POBLACION RURAL
+gredad <- read_excel("D:/2022/PLAN PROVINCIAL/pobgedad.xlsx")
+View(gredad)
+
+pgedad <- gredad$GEdad
+phombres <- gredad$RHombres
+pmujeres <- gredad$RMujeres
+
+datap <- data.frame(phombres,pmujeres,pgedad)
+
+pyramid(datap,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,10000,len=5), AxisFM="d", AxisBM=",", Csize=0.9,
+        Cstep=1, main="PIRAMIDE POBLACIONAL RURAL DE LA PROVINCIA DE CAJAMARCA 2017 
+        \n (Fuente: INEI, Censo 2017)")
+############################################################################
+# POBLACION URBANA
+gredad <- read_excel("D:/2022/PLAN PROVINCIAL/pobgedad.xlsx")
+View(gredad)
+
+pgedad <- gredad$GEdad
+phombres <- gredad$UHombres
+pmujeres <- gredad$UMujeres
+
+datap <- data.frame(phombres,pmujeres,pgedad)
+
+pyramid(datap,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,10000,len=5), AxisFM="d", AxisBM=",", Csize=0.9,
+        Cstep=1, main="PIRAMIDE POBLACIONAL URBANA DE LA PROVINCIA DE CAJAMARCA 2017 
+        \n (Fuente: INEI, Censo 2017)")
+
+##############################################################################
+## PIRAMIDE POR CURSO DE VIDA
+
+gredad <- read_excel("D:/2022/ASIS 2021/POBLACION/CVIDA.xlsx")
+View(gredad)
+
+cvida <- gredad$CVIDA
+chombres <- gredad$PROV
+cmujeres <- gredad$PROVM
+
+datap <- data.frame(chombres,cmujeres,cvida)
+
+pyramid(datap,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,70000,len=5), AxisFM="d", AxisBM=",", Csize=0.9,Cgap=0.4,
+        Cstep=1, main="PIRAMIDE POR CURSO DE VIDA DE LA PROVINCIA DE CAJAMARCA 2022 
+        \n (Fuente: INEI, MINSA)")
+#########################################################################
+piramid19 <- read_excel("D:/2022/ASIS 2021/POBLACION/piramid19.xlsx")
+View(piramid19)
+
+
+gedad <- piramid19$GEDAD
+hombres <- piramid19$HOMBRES
+mujeres <- piramid19$MUJERES
+
+data <- data.frame(hombres,mujeres,gedad)
+
+pyramid(data,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,80000,len=5), AxisFM="d", AxisBM=",", Csize=0.9,
+        Cstep=1, main="PIRAMIDE POBLACIONAL DE LA REGION CAJAMARCA 2019 
+        \n (Fuente: INEI, MINSA)")
+
+##############################################################################
+piramid20 <- read_excel("D:/2022/ASIS 2021/POBLACION/piramid20.xlsx")
+View(piramid20)
+
+
+gedad <- piramid20$GEDAD
+hombres <- piramid20$HOMBRES
+mujeres <- piramid20$MUJERES
+
+data <- data.frame(hombres,mujeres,gedad)
+
+pyramid(data,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,80000,len=5), AxisFM="d", AxisBM=",", Csize=0.9,
+        Cstep=1, main="PIRAMIDE POBLACIONAL DE LA REGION CAJAMARCA 2020 
+        \n (Fuente: INEI, MINSA)")
+################################################################################
+piramid21 <- read_excel("D:/2022/ASIS 2021/POBLACION/piramid21.xlsx")
+View(piramid21)
+
+
+gedad <- piramid21$GEDAD
+hombres <- piramid21$HOMBRES
+mujeres <- piramid21$MUJERES
+
+data <- data.frame(hombres,mujeres,gedad)
+
+pyramid(data,Llab="Hombres",Rlab="Mujeres",Clab="",
+        Laxis=seq(0,85000,len=5), AxisFM="d", AxisBM=",", Csize=0.9,
+        Cstep=1, main="PIRAMIDE POBLACIONAL DE LA REGION CAJAMARCA 2021 
+        \n (Fuente: INEI, MINSA)")
+############################################################################
+library(tidyverse)
+library(gganimate)
+library(scales)
+library(ggrepel)
+library(lemon)
+library(readxl)
+
+pp2007 <- read_excel("D:/2022/ASIS 2021/POBLACION/PIRAMIDES0717.xlsx")
+View(pp2007)
+
+pp<-ggplot(data=pp2007,
+             mapping = aes(
+               x=ifelse(test = SEXO == "HOMBRE", yes = -POBLACION, no =POBLACION),
+               y=GEDAD, fill = SEXO)) +
+  geom_col()+
+  theme(plot.caption=element_text(vjust = 1,hjust=0,size=8),
+        plot.title=element_text(hjust=0.5, size=14,face="bold"),
+        plot.subtitle =element_text(hjust=0.5, size=12,face="bold"))+
+  scale_fill_manual(values = c("#00AFBB","#FC4E07"))+
+  scale_x_symmetric(labels = abs) +
+  facet_wrap (~ AÑO)+
+  ylab("Edades")+
+  xlab("Miles de personas")+
+  labs(title="Pirámide poblacional 2007 y 2017",
+      # subtitle = "Año 2007",
+       caption="Fuente: ORE-DIRESA: Censo de Población y Vivienda 2007, 2017, INEI.")
+
+pp
+
+################################################################################
+
+mutate(
+  # create a pop perc and a signal 1 / -1
+  ppPerc = case_when(
+    sex == 'Male' ~ round(Population / sum(Population) * 100, 2),
+    TRUE ~ -round(Population / sum(Population) *
+                    100, 2)
+  ),
+  signal = case_when(sex == 'Male' ~ 1,
+                     TRUE ~ -1)
+) %>%
+  ggplot() + # build the plot with ggplot2
+  geom_bar(aes(x = age, y = PopPerc, fill = sex), stat = 'identity') + # define aesthetics
+  geom_text(aes(
+    # create the text
+    x = age,
+    y = PopPerc + signal * .3,
+    label = abs(PopPerc)
+  )) +
+  coord_flip() + # flip the plot
+  scale_fill_manual(name = '', values = c('darkred', 'steelblue')) + # define the colors (darkred = female, steelblue = male)
+  scale_y_continuous(
+    # scale the y-lab
+    breaks = seq(-10, 10, 1),
+    labels = function(x) {
+      paste(abs(x), '%')
+    }
+  ) +
+  labs(
+    # name the labs
+    x = '',
+    y = 'Participants in %',
+    title = 'Population Pyramid',
+    subtitle = paste0('N = ', nrow(sex_age)),
+    caption = 'Source: '
+  ) +
+  theme(
+    # costume the theme
+    axis.text.x = element_text(vjust = .5),
+    panel.grid.major.y = element_line(color = 'lightgray', linetype =
+                                        'dashed'),
+    legend.position = 'top',
+    legend.justification = 'center'
+  ) +
+  theme_classic() # choose theme
+
+################################################################
+#POBLACION RURAL
+
+
+
+ur <- read_excel("D:/2022/ASIS 2021/POBLACION/urban_rural.xlsx")
+View(ur)
+
+provincia <- ur$Provincia
+urbana <- ur$Urbana
+rural <- ur$Rural
+
+ppur <- data.frame(urbana,rural,provincia)
+
+pyramid(ppur,Llab="URBANA",Rlab="RURAL",Clab="",
+        Laxis=seq(0,220000,len=5), AxisFM="d", AxisBM=",", Csize=1,
+        Cstep=1, Cadj=-0.01,
+        main="PIRAMIDE POBLACIONAL URBANA Y RURAL DE LA REGION CAJAMARCA 2017 
+        \n (Fuente: INEI, Censo 2017)")
+
+##############################################################
+
+pp1921 <- read_excel("D:/2022/ASIS 2021/POBLACION/pir1921.xlsx")
+View(pp1921)
+
+ppp<-ggplot(data=pp1921,
+           mapping = aes(
+             x=ifelse(test = SEXO == "HOMBRES", yes = -POBLACION, no =POBLACION),
+             y=GEDAD, fill = SEXO)) +
+  geom_col()+
+  theme(plot.caption=element_text(vjust = 1,hjust=0,size=8),
+        plot.title=element_text(hjust=0.5, size=14,face="bold"),
+        plot.subtitle =element_text(hjust=0.5, size=12,face="bold"))+
+  scale_fill_manual(values = c("#00AFBB","#FC4E07"))+
+  scale_x_symmetric(labels = abs) +
+  facet_wrap (~ AÑO)+
+  ylab("Edades")+
+  xlab("Miles de personas")+
+  labs(title="Pirámide poblacional 2019, 2020 y 2021",
+       # subtitle = "Año 2007",
+       caption="Fuente: ORE-DIRESA: Censo de Población y Vivienda 2019,2020, 2021, INEI.")
+
+ppp
+
+#######################################################
+### PIRAMIDE DE NIÑO < 5 AÑOS
+
+pn <- read_excel("D:/2022/ASIS 2021/POBLACION/pniño.xlsx")
+
+pnino<-ggplot(data=pn,
+            mapping = aes(
+              x=ifelse(test = SEXO == "HOMBRES", yes = -POBLACION, no =POBLACION),
+              y=GEDAD, fill = SEXO)) +
+  geom_col()+
+  theme(plot.caption=element_text(vjust = 1,hjust=0,size=8),
+        plot.title=element_text(hjust=0.5, size=14,face="bold"),
+        plot.subtitle =element_text(hjust=0.5, size=12,face="bold"))+
+  scale_fill_manual(values = c("#00AFBB","#FC4E07"))+
+  scale_x_symmetric(labels = abs) +
+  facet_wrap (~ AÑO)+
+  ylab("Edades")+
+  xlab("Miles de personas")+
+  labs(title="Pirámide poblacional 2019, 2020 y 2021",
+       # subtitle = "Año 2007",
+       caption="Fuente: ORE-DIRESA: Censo de Población y Vivienda 2019,2020, 2021, INEI.")
+
+pnino
+
+
+
+
+if(!require('graphics')) {
+  install.packages('graphics')
+  library('graphics')
+}
+
+require(stats) # for rnorm
+plot(1:4, rnorm(4), axes = FALSE)
+axis(1, 1:4, LETTERS[1:4])
+axis(2)
+box() #- to make it look "as usual"
+
+plot(1:7, rnorm(7), main = "axis() examples",
+     type = "s", xaxt = "n", frame = FALSE, col = "red")
+axis(1, 1:7, LETTERS[1:7], col.axis = "blue")
+# unusual options:
+axis(4, col = "violet", col.axis = "dark violet", lwd = 2)
+axis(3, col = "gold", lty = 2, lwd = 0.5)
+
+# one way to have a custom x axis
+plot(1:10, xaxt = "n")
+axis(1, xaxp = c(2, 9, 7))
+
+#######################################################
+ur <- read_excel("D:/RSTUDIO/urban_rural.xlsx")
+
+View(ur)
+
+provincia <- ur$Provincia
+
+urbana <- ur$Urbana
+
+rural <- ur$Rural
+
+ppur <- data.frame(urbana,rural,provincia)
+
+pyramid(ppur,Llab="URBANA",Rlab="RURAL",Clab="",
+        
+        Laxis=seq(0,220000,len=5), AxisFM="d", AxisBM=",", Csize=1,
+        
+        Cstep=1, Cadj=-0.01,
+        
+        main="PIRAMIDE POBLACIONAL URBANA Y RURAL DE LA REGION CAJAMARCA 2017 
+
+        \n (Fuente: INEI, Censo 2017)")
+
+
