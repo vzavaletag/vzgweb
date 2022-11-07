@@ -297,7 +297,7 @@ plot(1:10, xaxt = "n")
 axis(1, xaxp = c(2, 9, 7))
 
 #######################################################
-ur <- read_excel("D:/RSTUDIO/urban_rural.xlsx")
+ur <- read_excel("D:/RSTUDIO/vzgweb/urban_rural.xlsx")
 
 View(ur)
 
@@ -311,7 +311,7 @@ ppur <- data.frame(urbana,rural,provincia)
 
 pyramid(ppur,Llab="URBANA",Rlab="RURAL",Clab="",
         
-        Laxis=seq(0,220000,len=5), AxisFM="d", AxisBM=",", Csize=1,
+        Laxis=seq(0,220000,len=5), AxisFM="d", AxisBM=",", Csize=0.8,
         
         Cstep=1, Cadj=-0.01,
         

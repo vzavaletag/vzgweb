@@ -27,12 +27,11 @@ ppur <- data.frame(urbana,rural,provincia)
 
 pyramid(ppur,Llab="URBANA",Rlab="RURAL",Clab="",
         
-        Laxis=seq(0,220000,len=5), AxisFM="d", AxisBM=",", Csize=1,
+        Laxis=seq(0,220000,len=5), AxisFM="d", AxisBM=",", Csize=0.7,
         
         Cstep=1, Cadj=-0.01,
         
-        main="PIRAMIDE POBLACIONAL URBANA Y RURAL DE LA REGION CAJAMARCA 2017 
-
+        main="POBLACIONAL URBANA Y RURAL DE LA REGION CAJAMARCA 2017 
         \n (Fuente: INEI, Censo 2017)")
 
 
