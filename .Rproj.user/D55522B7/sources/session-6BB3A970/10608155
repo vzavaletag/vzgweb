@@ -3,7 +3,7 @@
     "path": "D:/RSTUDIO/vzgweb/Blogs.qmd",
     "project_path": "Blogs.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "3496832027",
     "contents": "",
     "dirty": false,
     "created": 1667786144509.0,
@@ -19,14 +19,14 @@
         "rmdVisualCollapsedChunks": "",
         "cursorPosition": "14,0",
         "scrollLine": "0",
-        "rmdVisualModeLocation": "557:192"
+        "rmdVisualModeLocation": "539:336"
     },
     "folds": "",
-    "lastKnownWriteTime": 1667789148,
+    "lastKnownWriteTime": 1667790006,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1667789148271,
+    "last_content_update": 1667790006339,
     "read_only": false,
     "read_only_alternatives": []
 }
