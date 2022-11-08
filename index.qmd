@@ -2,9 +2,9 @@
 title: "Apuntes de Salud Pública"
 ---
 
-Este es una prueba, por el momento
+La Vigilancia de la Salud Publica
 
-Para la siguiente semana
+*La vigilancia de la salud pública es la práctica sistemática de la recolección de datos, análisis, interpretación, y diseminación de información de salud para la planificación, respuesta, investigación y evaluación de las acciones de salud pública.*
 
 This is a Quarto website.
 

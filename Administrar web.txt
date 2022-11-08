@@ -1,0 +1,12 @@
+Administrar pagina web con Quarto
+
+1. crear el documento Quarto   (.qmd)
+2. Ingresar contenido en el documento y luego      ---> RENDER
+
+3. En Terminal insertar:
+     D:\RSTUDIO\vzgweb>git add .
+4. En GIT Commit --- texto en ventana "actualizar"
+5. Luego en Git Push
+6. Esperar un momento y actualizar
+    https://vzavaletag.github.io/vzgweb/
+
